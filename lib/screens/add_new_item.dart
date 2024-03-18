@@ -98,8 +98,16 @@ class NewItem extends StatelessWidget {
                     ElevatedButton(
                         onPressed: () {
                           controller.saveForm();
+                          Navigator.of(context).pop();
                         },
-                        child: const Text('Save'))
+                        child: controller.isAdding
+                            ? const SizedBox(
+                                height: 16,
+                                width: 16,
+                                child: CircularProgressIndicator(
+                                  color: Colors.white,
+                                ))
+                            : const Text('Save'))
                   ],
                 )
               ],

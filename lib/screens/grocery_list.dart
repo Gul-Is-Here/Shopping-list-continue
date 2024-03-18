@@ -24,7 +24,10 @@ class GroceryList extends StatelessWidget {
       ),
       body: Obx(
         () => controller.groceryList.isEmpty
-            ? const Center(child: Text('No grocery items available'))
+            ? const Center(
+                child: CircularProgressIndicator(
+                color: Colors.white,
+              ))
             : ListView.builder(
                 itemCount: controller.groceryList.length,
                 itemBuilder: (ctx, index) {
